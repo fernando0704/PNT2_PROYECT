@@ -5,8 +5,16 @@ import { defineStore } from 'pinia'
 export const useStore = defineStore('main', {
   
     state: () => {
-        return { listaVacunacion: [{id:1,desc:"algo", fecha:"1/1/1"},{id:2,desc:"algo2", fecha:"1/1/1"}] }
+        return { 
+            listaCompras: [] 
+        }
     },
   
+    actions: {
+        agregarTurno(obj) {
+            this.listaVacunacion.push(obj);
+        },
+    },
+
     // other options...
 })

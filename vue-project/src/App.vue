@@ -11,6 +11,7 @@
         >Calendario Vacunacion</router-link
       >
       |
+      <router-link to="/confirmarTurno">Confirmar Turno</router-link> |
     </p>
     <router-view></router-view>
   </div>

@@ -7,6 +7,7 @@ import Home from '../components/Home.vue'
 import NotFound from '../components/NotFound.vue'
 import Centros from '../components/Centros.vue'
 import CalendarioVacunacion from '../components/CalendarioVacunacion.vue'
+import ConfirmarTurno from '../components/ConfirmarTurno.vue'
 
 
 
@@ -19,6 +20,7 @@ const routes = [
   { path: '/about', component: About },
   { path: '/centros', component: Centros },
   { path: '/calendarioVacunacion', component: CalendarioVacunacion },
+  { path: '/confimarTurno', component: ConfirmarTurno },
   { path: '/:pathMatch(.*)*', component: NotFound },
 ]
 
