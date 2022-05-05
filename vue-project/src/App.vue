@@ -7,6 +7,10 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/centros">Centros</router-link> |
       <!--<router-link to="/gestionventa">Gestion venta</router-link> |-->
+      <router-link to="/calendarioVacunacion"
+        >Calendario Vacunacion</router-link
+      >
+      |
     </p>
     <router-view></router-view>
   </div>
