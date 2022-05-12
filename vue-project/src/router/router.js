@@ -20,7 +20,7 @@ const routes = [
   { path: '/about', component: About },
   { path: '/centros', component: Centros },
   { path: '/calendarioVacunacion', component: CalendarioVacunacion },
-  { path: '/confimarTurno', component: ConfirmarTurno },
+  { path: '/confirmarTurno', component: ConfirmarTurno },
   { path: '/:pathMatch(.*)*', component: NotFound },
 ]
 
