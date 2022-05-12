@@ -6,7 +6,7 @@ export const useStore = defineStore('main', {
   
     state: () => {
         return { 
-            listaCompras: [] 
+            listaVacunacion: [] 
         }
     },
   

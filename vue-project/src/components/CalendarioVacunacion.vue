@@ -16,6 +16,8 @@
 import { useStore } from "../store/storeVacunacion.js";
 import { storeToRefs } from "pinia";
 
+console.log("prueba conexion")
+
 export default {
   setup() {
     const store = useStore();
@@ -26,6 +28,17 @@ export default {
       listaVacunacion,
     };
   },
+
+  data(){
+    return{
+      turno:{fecha:'',centro:'',vacuna:''}
+    }
+  },
+  methods:{
+    agregar(){
+      this.store.agregarTurno({...this.turno});
+    }
+  }
 };
 </script>
 
