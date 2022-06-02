@@ -1,21 +1,35 @@
-<script setup></script>
-
 <template>
   <div>
-    <p>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/centros">Centros</router-link> |
-      <!--<router-link to="/gestionventa">Gestion venta</router-link> |-->
-      <router-link to="/calendarioVacunacion"
-        >Calendario Vacunacion</router-link
-      >
-      |
-      <router-link to="/confirmarTurno">Confirmar Turno</router-link> |
-    </p>
+    <div v-if="!estaLogeado">
+      <router-link to="/">Home</router-link>
+      <router-link to="/login">Login</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/centros">Centros</router-link>
+
+    </div>
+    <div v-if="estaLogeado">
+    <router-link to="/calendarioVacunacion">Calendario Vacunacion</router-link>
+    <router-link to="/confirmarTurno">Confirmar Turno</router-link>
+    <router-link to="/logout">Logout</router-link>
+    </div>
     <router-view></router-view>
   </div>
 </template>
+
+<script>
+import { usuarioStore } from "../src/store/usuarioStore.js";
+import { storeToRefs } from 'pinia'
+
+export default {
+  setup() {
+    const store = usuarioStore();
+    const { estaLogeado } = storeToRefs(store)
+    return {
+      store, estaLogeado
+    };
+  },
+};
+</script>
 
 <style>
 @import "./assets/base.css";

@@ -8,7 +8,8 @@ import NotFound from '../components/NotFound.vue'
 import Centros from '../components/Centros.vue'
 import CalendarioVacunacion from '../components/CalendarioVacunacion.vue'
 import ConfirmarTurno from '../components/ConfirmarTurno.vue'
-
+import Login from '../components/Login.vue'
+import Logout from '../components/Logout.vue'
 
 
 //const Home = { template: '<div>Home</div>' }
