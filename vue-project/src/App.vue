@@ -8,7 +8,7 @@
 
     </div>
     <div v-if="estaLogeado">
-    <router-link to="/calendarioVacunacion">Calendario Vacunacion</router-link>
+    <router-link to="/gestionTurno">Turnos</router-link>
     <router-link to="/confirmarTurno">Confirmar Turno</router-link>
     <router-link to="/logout">Logout</router-link>
     </div>

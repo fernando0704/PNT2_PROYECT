@@ -34,7 +34,7 @@ export default {
       try {
         await this.registerUser({...this.usuario})
         if (this.estaLogeado) {
-          this.$router.push('/vendedor')
+          this.$router.push('/usuario')
         } else {
           this.mensajeDeError = "Usuario o password inconrrecto"  
         }

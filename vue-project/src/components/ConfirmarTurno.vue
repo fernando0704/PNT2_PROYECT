@@ -1,21 +1,21 @@
 <template>
   <div>
     <h2>Lista para confirmar turnos</h2>
-    {{ listaVacunacion }}
+    {{ listaTurnos }}
   </div>
 </template>
 
 <script>
-import { useStore } from "../store/storeVacunacion.js";
+import { useStore } from "../store/storeTurnos.js";
 import { storeToRefs } from "pinia";
 
 export default {
   setup() {
     const store = useStore();
-    const { listaVacunacion } = storeToRefs(store);
+    const { listaTurnos } = storeToRefs(store);
     return {
       store,
-      listaVacunacion,
+      listaTurnos,
     };
   },
 };

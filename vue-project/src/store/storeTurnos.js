@@ -6,13 +6,13 @@ export const useStore = defineStore('main', {
   
     state: () => {
         return { 
-            listaVacunacion: [] 
+            listaTurnos: [] 
         }
     },
   
     actions: {
         agregarTurno(obj) {
-            this.listaVacunacion.push(obj);
+            this.listaTurnos.push(obj);
         },
     },
 
