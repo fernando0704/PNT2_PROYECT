@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Lista para confirmar turnos</h2>
-    {{ listaTurnos }}
+    {{listaTurnos}}
   </div>
 </template>
 
@@ -9,6 +9,8 @@
 import { useStore } from "../store/storeTurnos.js";
 import { storeToRefs } from "pinia";
 
+//no muestra los turnos para confirma, es necesario esta pagina? podriamops borrarla
+//averiguemos como funciona pinia
 export default {
   setup() {
     const store = useStore();

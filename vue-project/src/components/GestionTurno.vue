@@ -30,7 +30,7 @@ export default {
   created: async function () {
       try {        
         const rta = await apiTurno.getListaTurnos();
-        this.lista = rta.data;
+        this.listaTurnos = rta.data;
       } catch( error ) {
         console.log(error);
         this.mensajeError = 'Se produjo un error en la conexion'
