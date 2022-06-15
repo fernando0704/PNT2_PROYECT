@@ -10,6 +10,7 @@
     <div v-if="estaLogeado">
     <router-link to="/gestionTurno">Turnos</router-link>
     <router-link to="/confirmarTurno">Confirmar Turno</router-link>
+    <router-link to="/agregarCentros">Agregar Centros</router-link>
     <router-link to="/logout">Logout</router-link>
     </div>
     <router-view></router-view>

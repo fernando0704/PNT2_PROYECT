@@ -12,6 +12,7 @@ import Login from '../components/Login.vue'
 import Logout from '../components/Logout.vue'
 import Usuario from '../components/Usuario.vue'
 import GestionTurno from '../components/GestionTurno.vue'
+import AgregarCentros from '../components/AgregarCentros.vue'
 
 
 
@@ -24,6 +25,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
   { path: '/centros', component: Centros },
+  { path: '/agregarCentros', component: AgregarCentros },
   { path: '/centro', component: Centro },
   { path: '/gestionturno', component: GestionTurno , meta: {requiresAuth:true}},
   { path: '/confirmarturno', component: ConfirmarTurno , meta: {requiresAuth:true}},

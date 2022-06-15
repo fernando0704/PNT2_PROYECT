@@ -9,13 +9,13 @@ const apiClient = axios.create({
 })
 
 export default {
-    getListaTurnos() {
-        return apiClient.get('/api/getlistaTurnos')
+    getListaCentros() {
+        return apiClient.get('/api/getlistaCentros')
     },
-    setTurno(turno) {
-        return apiClient.post('/api/setTurno', turno)
+    setcentro(centro) {
+        return apiClient.post('/api/setCentro', centro)
     },
-    deleteTurno(id) {
-        return apiClient.delete('/api/deleteTurno' + id)
+    deleteCentro(id) {
+        return apiClient.delete('/api/deleteCentro' + id)
     }
 }

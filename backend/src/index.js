@@ -20,57 +20,13 @@ app.post('/api/login', (req,res) => {
   }
 })
 
-// //simulo base de datos: tipo de vacunas
-//si llegara a hacer falta una lista de vacunas en el back dejamos esto
-// const listaVacunas = [
-//     {
-//         codigo:1,
-//         nombre:"Astrazeneca"
-//     },
-//     {
-//         codigo:2,
-//         nombre:"Moderna"
-//     },
-//     {
-//         codigo:3,
-//         nombre:"Pfizer"
-//     },
-//     {
-//         codigo:4,
-//         nombre:"Sinopharm"
-//     }
-// ];
-
-// app.get('/api/getlistavacunas',(req,res)=>{
-//     res.json(listaVacunas);
-// })
-
-// app.post('/api/setlistavacunas',(req,res)=>{
-//     console.log(req.body);
-//     listaVacunas.push(req.body);
-//     res.json(req.body);
-// })
-
-// app.delete('/api/deletelistavacuna/:codigo', (req,res) => {
-//     req.params.codigo = Number(req.params.codigo)
-//     console.log(req.params.codigo);
-//     const listaCodigos = listaVacunas.map(e => {return e.codigo} )
-//     console.log(listaCodigos);
-//     const indice = listaVacunas.indexOf(req.params.codigo);
-//     console.log(indice);
-//     lista.splice(indice,1);
-//     res.json(req.params)
-//   })
-// //fin lista vacunas
-//simulo base de datos: gestion turnos
+//TURNOS
 const listaTurnos = [
     {
-        centro:"centro 1",
-        fecha:"fecha 1",
-        vacuna:"",
-        codigo:"codigo",
-
-
+        centro:"centro back 1",
+        fecha:"fecha back 1",
+        vacuna:"vacuna back",
+        codigo:"2",
     },
 
 ];
@@ -96,6 +52,37 @@ app.delete('/api/deleteTurno/:codigo', (req,res) => {
     res.json(req.params)
   })
 
-  app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
+  //CENTROS
+const listaCentros = [
+  {
+      direccion:"direc back 1",
+      nombre:"nombre back 1",
+      codigo:"1",
+  },
+
+];
+
+app.get('/api/getlistaCentros',(req,res)=>{
+  res.json(listaCentros);
+})
+
+app.post('/api/setCentro',(req,res)=>{
+  console.log(req.body);
+  listaCentros.push(req.body);
+  res.json(req.body);
+})
+
+app.delete('/api/deleteCentro/:codigo', (req,res) => {
+  req.params.codigo = Number(req.params.codigo)
+  console.log(req.params.codigo);
+  const listaCodigos = listaCentros.map(e => {return e.codigo} )
+  console.log(listaCodigos);
+  const indice = listaCentros.indexOf(req.params.codigo);
+  console.log(indice);
+  lista.splice(indice,1);
+  res.json(req.params)
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
