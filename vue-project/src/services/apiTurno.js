@@ -25,6 +25,6 @@ export default {
         return apiClient.post('/api/setTurno', turno)
     },
     deleteTurno(id) {
-        return apiClient.delete('/api/deleteTurno' + id)
+        return apiClient.delete('/api/deleteTurno/' + id)
     }
 }

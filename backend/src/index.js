@@ -67,7 +67,7 @@ const listaTurnos = [
     {
         centro:"centro 1",
         fecha:"fecha 1",
-        vacuna:"",
+        vacuna:"vacuna1",
         codigo:"codigo",
 
 
@@ -83,16 +83,18 @@ app.post('/api/setTurno',(req,res)=>{
     console.log(req.body);
     listaTurnos.push(req.body);
     res.json(req.body);
+    console.log("creado")
 })
 
 app.delete('/api/deleteTurno/:codigo', (req,res) => {
-    req.params.codigo = Number(req.params.codigo)
+    //req.params.codigo = Number(req.params.codigo)
+    console.log("llegue")
     console.log(req.params.codigo);
     const listaCodigos = listaTurnos.map(e => {return e.codigo} )
     console.log(listaCodigos);
     const indice = listaTurnos.indexOf(req.params.codigo);
     console.log(indice);
-    lista.splice(indice,1);
+    listaTurnos.splice(indice,1);
     res.json(req.params)
   })
 

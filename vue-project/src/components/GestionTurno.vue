@@ -41,6 +41,7 @@ export default {
       try {        
         const obj = {...this.turno}
         const rta = await apiTurno.setTurno(obj);
+        console.log("agregado") 
         console.log(rta);
         this.listaTurnos.push(obj);
       } catch( error ) {
@@ -49,15 +50,17 @@ export default {
       }
     },
     async borrarTurno(codigo) {
-      try {        
+      try {
+        console.log("paso1")        
         const rta = await apiTurno.deleteTurno(codigo);
+        console.log("paso2") 
         console.log(rta);
         console.log(codigo);
-        const listaCodigos = this.lista.map(e => {return e.codigo} )
+        const listaCodigos = this.listaTurnos.map(e => {return e.codigo} )
         console.log(listaCodigos);
         const indice = listaCodigos.indexOf(codigo);
         console.log(indice);
-        this.lista.splice(indice,1);
+        this.listaTurnos.splice(indice,1);
       } catch( error ) {
         console.log(error);
         this.mensajeError = 'Se produjo un error en la conexion'

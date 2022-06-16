@@ -29,7 +29,7 @@ const routes = [
   { path: '/confirmarturno', component: ConfirmarTurno , meta: {requiresAuth:true}},
   { path: '/:pathmatch(.*)*', component: NotFound },
   { path: '/login', component: Login },
-  //{ path: '/usuario/:id', component: Usuario  , meta: {requiresAuth:true}},
+  { path: '/usuario/:id', component: Usuario  , meta: {requiresAuth:true}},
   { path: '/usuario', component: Usuario  , meta: {requiresAuth:true}},
   { path: '/logout', component: Logout  , meta: {requiresAuth:true}},
 
