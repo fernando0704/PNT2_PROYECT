@@ -12,6 +12,8 @@ import Login from '../components/Login.vue'
 import Logout from '../components/Logout.vue'
 import Usuario from '../components/Usuario.vue'
 import GestionTurno from '../components/GestionTurno.vue'
+import GestionVacuna from '../components/GestionVacuna.vue'
+import GestionCentro from '../components/GestionCentro.vue'
 
 
 
@@ -26,6 +28,8 @@ const routes = [
   { path: '/centros', component: Centros },
   { path: '/centro', component: Centro },
   { path: '/gestionturno', component: GestionTurno , meta: {requiresAuth:true}},
+  { path: '/gestionvacuna', component: GestionVacuna , meta: {requiresAuth:true}},
+  { path: '/gestioncentro', component: GestionCentro , meta: {requiresAuth:true}},
   { path: '/confirmarturno', component: ConfirmarTurno , meta: {requiresAuth:true}},
   { path: '/:pathmatch(.*)*', component: NotFound },
   { path: '/login', component: Login },
