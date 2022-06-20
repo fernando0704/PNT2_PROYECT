@@ -1,17 +1,23 @@
 <template>
   <div>
-    <div v-if="!estaLogeado">
-      <router-link to="/">Home</router-link>
-      <router-link to="/login">Login</router-link>
-      <router-link to="/centros">Centros</router-link>
-
-    </div>
-    <div v-if="estaLogeado">
-      <router-link to="/gestionTurno">Agregar Turnos</router-link>
-      <router-link to="/gestionCentro">Agregar Centro</router-link>
-      <router-link to="/gestionVacuna">Agregar Vacunas</router-link>
-
-    <router-link to="/logout">Logout</router-link>
+    <div class="navbar">
+      <div v-if="!estaLogeado">
+        <ul>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/login">Ingresar</router-link></li>
+          <li><router-link to="/centros">Centros</router-link></li>
+        </ul>
+      </div>
+      <div v-if="estaLogeado">
+        <ul>
+          <li><router-link to="/gestionTurno">Agregar Turnos</router-link></li>
+          <li><router-link to="/gestionCentro">Agregar Centro</router-link></li>
+          <li>
+            <router-link to="/gestionVacuna">Agregar Vacunas</router-link>
+          </li>
+          <li><router-link to="/logout">Logout</router-link></li>
+        </ul>
+      </div>
     </div>
     <router-view></router-view>
   </div>
@@ -19,14 +25,15 @@
 
 <script>
 import { usuarioStore } from "../src/store/usuarioStore.js";
-import { storeToRefs } from 'pinia'
+import { storeToRefs } from "pinia";
 
 export default {
   setup() {
     const store = usuarioStore();
-    const { estaLogeado } = storeToRefs(store)
+    const { estaLogeado } = storeToRefs(store);
     return {
-      store, estaLogeado
+      store,
+      estaLogeado,
     };
   },
 };
@@ -37,12 +44,49 @@ export default {
 
 #app {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
+  margin: 0;
+  padding: 1rem;
   font-weight: normal;
+  background-color: #95c1e4;
 }
 
+.navbar {
+  background-color: rgb(20, 18, 54);
+  margin-bottom: 0%;
+}
+.contenido {
+  color: rgb(20, 18, 54);
+}
+.titulo {
+  color: rgb(20, 18, 54);
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+  border-style: solid;
+  border-color: aliceblue;
+  border-width: 1px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
 header {
   line-height: 1.5;
 }
