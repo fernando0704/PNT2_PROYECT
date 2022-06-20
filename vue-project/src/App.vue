@@ -3,14 +3,14 @@
     <div v-if="!estaLogeado">
       <router-link to="/">Home</router-link>
       <router-link to="/login">Login</router-link>
-      <router-link to="/about">About</router-link>
       <router-link to="/centros">Centros</router-link>
 
     </div>
     <div v-if="estaLogeado">
-    <router-link to="/gestionTurno">Turnos</router-link>
-    <router-link to="/confirmarTurno">Confirmar Turno</router-link>
-    <router-link to="/agregarCentros">Agregar Centros</router-link>
+      <router-link to="/gestionTurno">Agregar Turnos</router-link>
+      <router-link to="/gestionCentro">Agregar Centro</router-link>
+      <router-link to="/gestionVacuna">Agregar Vacunas</router-link>
+
     <router-link to="/logout">Logout</router-link>
     </div>
     <router-view></router-view>

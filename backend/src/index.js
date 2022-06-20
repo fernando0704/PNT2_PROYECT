@@ -23,12 +23,12 @@ app.post('/api/login', (req,res) => {
 //TURNOS
 const listaTurnos = [
     {
-        centro:"centro back 1",
-        fecha:"fecha back 1",
-        vacuna:"vacuna back",
-        codigo:"2",
-    },
+        centro:"centro 1",
+        fecha:"fecha 1",
+        vacuna:"vacuna1",
+        codigo:"codigo",
 
+    },
 ];
 
 app.get('/api/getlistaTurnos',(req,res)=>{
@@ -42,47 +42,79 @@ app.post('/api/setTurno',(req,res)=>{
 })
 
 app.delete('/api/deleteTurno/:codigo', (req,res) => {
+    //la siguiente linea de req params estaba comentada
     req.params.codigo = Number(req.params.codigo)
     console.log(req.params.codigo);
     const listaCodigos = listaTurnos.map(e => {return e.codigo} )
     console.log(listaCodigos);
     const indice = listaTurnos.indexOf(req.params.codigo);
     console.log(indice);
-    lista.splice(indice,1);
+    listaTurnos.splice(indice,1);
     res.json(req.params)
   })
 
   //CENTROS
-const listaCentros = [
-  {
-      direccion:"direc back 1",
-      nombre:"nombre back 1",
-      codigo:"1",
-  },
+  const listaCentros = [
+    {
+        nombre:"centro 1",
+        direccion:"fecha 1",
+        codigoCentro:"codigo",
+    },
+  ];
 
-];
+  app.get('/api/getlistaCentros',(req,res)=>{
+    res.json(listaCentros);
+  })
 
-app.get('/api/getlistaCentros',(req,res)=>{
-  res.json(listaCentros);
-})
+  app.post('/api/setCentro',(req,res)=>{
+    console.log(req.body);
+    listaCentros.push(req.body);
+    res.json(req.body);
+  })
 
-app.post('/api/setCentro',(req,res)=>{
-  console.log(req.body);
-  listaCentros.push(req.body);
-  res.json(req.body);
-})
+  app.delete('/api/deleteCentro/:codigoCentro', (req,res) => {
+    //la siguiente linea de req params estaba comentada
+    req.params.codigo = Number(req.params.codigo)
+    console.log(req.params.codigo);
+    const listaCodigosCentro = listaCentros.map(e => {return e.codigoCentro} )
+    console.log(listaCodigosCentro);
+    const indiceCentros = listaCentros.indexOf(req.params.codigoCentro);
+    console.log(indiceCentros);
+    listaCentros.splice(indiceCentros,1);
+    res.json(req.params)
+  })
 
-app.delete('/api/deleteCentro/:codigo', (req,res) => {
-  req.params.codigo = Number(req.params.codigo)
-  console.log(req.params.codigo);
-  const listaCodigos = listaCentros.map(e => {return e.codigo} )
-  console.log(listaCodigos);
-  const indice = listaCentros.indexOf(req.params.codigo);
-  console.log(indice);
-  lista.splice(indice,1);
-  res.json(req.params)
-})
+  //VACUNAS
+  const listaVacunas = [
+    {
+        nombre:"pfizer",
+        codigoVacuna:"codigoBack",
+    },
+  ];
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  app.get('/api/getlistaVacunas',(req,res)=>{
+    res.json(listaVacunas);
+  })
+
+  app.post('/api/setVacuna',(req,res)=>{
+    console.log(req.body);
+    listaVacunas.push(req.body);
+    res.json(req.body);
+  })
+
+  app.delete('/api/deleteVacuna/:codigoVacuna', (req,res) => {
+    //la siguiente linea de req params estaba comentada
+    req.params.codigo = Number(req.params.codigo)
+    console.log(req.params.codigo);
+    const listaCodigosVacuna = listaVacunas.map(e => {return e.codigoVacuna} )
+    console.log(listaCodigosVacuna);
+    const indiceVacuna = listaVacunas.indexOf(req.params.codigoVacuna);
+    console.log(indiceVacuna);
+    listaVacunas.splice(indiceVacuna,1);
+    res.json(req.params)
+  })
+
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })
+

@@ -12,10 +12,10 @@ export default {
     getListaCentros() {
         return apiClient.get('/api/getlistaCentros')
     },
-    setcentro(centro) {
+    setCentro(centro) {
         return apiClient.post('/api/setCentro', centro)
     },
     deleteCentro(id) {
-        return apiClient.delete('/api/deleteCentro' + id)
+        return apiClient.delete('/api/deleteCentro/' + id)
     }
 }
