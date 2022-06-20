@@ -27,6 +27,7 @@ const listaTurnos = [
         fecha:"fecha 1",
         vacuna:"vacuna1",
         codigo:"codigo",
+
     },
 ];
 
@@ -113,7 +114,7 @@ app.delete('/api/deleteTurno/:codigo', (req,res) => {
     res.json(req.params)
   })
 
-
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
+

@@ -9,15 +9,6 @@ const apiClient = axios.create({
 })
 
 export default {
-    // getListaVacunas() {
-    //     return apiClient.get('/api/getlistavacunas')
-    // },
-    // setListaVacunas(Vacuna) {
-    //     return apiClient.post('/api/setlistavacunas', Vacuna)
-    // },
-    // deleteListaVacunas(id) {
-    //     return apiClient.delete('/api/deletelistavacunas' + id)
-    // },
     getListaTurnos() {
         return apiClient.get('/api/getlistaTurnos')
     },

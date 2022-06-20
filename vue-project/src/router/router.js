@@ -14,6 +14,7 @@ import Usuario from '../components/Usuario.vue'
 import GestionTurno from '../components/GestionTurno.vue'
 import GestionVacuna from '../components/GestionVacuna.vue'
 import GestionCentro from '../components/GestionCentro.vue'
+import AgregarCentros from '../components/AgregarCentros.vue'
 
 
 
@@ -26,6 +27,7 @@ const routes = [
   { path: '/', component: Home },
   { path: '/about', component: About },
   { path: '/centros', component: Centros },
+  { path: '/agregarCentros', component: AgregarCentros },
   { path: '/centro', component: Centro },
   { path: '/gestionturno', component: GestionTurno , meta: {requiresAuth:true}},
   { path: '/gestionvacuna', component: GestionVacuna , meta: {requiresAuth:true}},
